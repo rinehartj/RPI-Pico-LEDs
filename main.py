@@ -247,7 +247,7 @@ def randFade():
     while mode is True:
         randColor = COLORS[randint(0, 4)][randint(0, 3)]
         print(randColor)
-        for i in range(150, 0, int(-0.5*speed)):
+        for i in range(150, 0, -0.5*speed):
             for j in range(4):
                 u(j, randColor, i)
             sleep(0.05)
@@ -316,7 +316,7 @@ while True:
             mode = False
             baton.acquire()
             mode = True
-            _thread.start_new_thread(solidColor, (COLORS[button[0]-1][button[1]],))
+            _thread.start_new_thread(solidColor, (COLORS[button[0]-1][button[1]]))
             baton.release()
             
         if hexIn == 92:
